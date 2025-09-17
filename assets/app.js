@@ -7,4 +7,8 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
+// Import de la font pour Webpack Encore
+import './font/baby-gemoy/Baby_Gemoy.ttf';
+import './font/moldie-demo/Moldie_Demo.otf';
+
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
