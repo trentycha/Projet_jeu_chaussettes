@@ -10,6 +10,7 @@ use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 
 final class ArticleController extends AbstractController
@@ -29,7 +30,9 @@ final class ArticleController extends AbstractController
     }
 
     //CREER UN ARTICLE
+    
     #[Route('/article/create', name: 'create_article')]
+    #[IsGranted('ROLE_USER')]
     public function createArticle(Request $request,EntityManagerInterface $entityManager): Response
     {
         $article = new Article();
@@ -37,9 +40,10 @@ final class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $article->setUser($this->getUser());
             $entityManager->persist($article);
             $entityManager->flush();
-            $this->addFlash('success', 'Article created successfully!');
+            $this->addFlash('success', 'L\'article a été créé avec succès !');
             return $this->redirectToRoute('article');
         }
 
@@ -61,7 +65,7 @@ final class ArticleController extends AbstractController
         $entityManager->remove($article);
         $entityManager->flush();
 
-        $this->addFlash('success', 'Article deleted successfully!');
+        $this->addFlash('success', 'L\'article a été supprimé avec succès !');
 
         return $this->redirectToRoute('article');
 }
@@ -73,7 +77,7 @@ final class ArticleController extends AbstractController
         $article = $articleRepository->find($id);
 
         if(!$article){
-            throw $this->createNotFoundException('The article does not exist');
+            throw $this->createNotFoundException('L\'article n\'existe pas');
         }
 
         $form = $this->createForm(ArticleType::class, $article);
@@ -81,7 +85,7 @@ final class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()){
             $entityManager->flush();
-            $this->addFlash('success', 'Article updated successfully!');
+            $this->addFlash('success', 'L\'article a été modifié avec succès !');
             return $this->redirectToRoute('article');
         }
 
@@ -94,5 +98,22 @@ final class ArticleController extends AbstractController
             'form' => $formView,
         ]);
     }
-}
 
+    //VOIR UN ARTICLE
+    #[Route('/article/show/{id}', name: 'show_article')]
+    public function showArticle($id, ArticleRepository $articleRepository): Response
+    {
+        $article = $articleRepository->find($id);
+
+        if(!$article){
+            throw $this->createNotFoundException('L\'article n\'existe pas');
+        }
+
+        $user = $this->getUser();
+
+        return $this->render('article/show.html.twig', [
+            'user' => $user,
+            'article' => $article,
+        ]);
+    }
+}

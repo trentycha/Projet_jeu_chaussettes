@@ -9,12 +9,26 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Liste des articles</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/laragon/www/Projet_jeu_chaussettes/src/Controller/ArticleController.php</code></li>
-        <li>Your template at <code>C:/laragon/www/Projet_jeu_chaussettes/templates/article/index.html.twig</code></li>
-    </ul>
+<a href="{{ path('create_article') }}">Créer un nouvel article</a>
+
+
+<div>
+    {% for article in articles %}
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.content }}</p>
+        <p>Publié par : {{ article.user.email }}</p>
+        <a href="{{ path('show_article', {'id': article.id}) }}">Voir l'article</a>
+        <a href="{{ path('update_article', {'id': article.id}) }}">Modifier l'article</a>
+        <form method="post" action="{{ path('delete_article', {'id': article.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+            <button class="btn">Supprimer l'article</button>
+        </form>
+    {% else %}
+        <p>Aucun article trouvé.</p>
+    {% endfor %}
+</div>
+
 </div>
 {% endblock %}
