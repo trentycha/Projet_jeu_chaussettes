@@ -3,12 +3,12 @@
 {% block title %}Wanted{% endblock %}
 
 {% block body %}
-    <div>
-        <button class="menu">Inscription</button>
-        <button class="menu">Connexion</button>
+    <div class="top-nav">
+        <a href="{{ path('app_register') }}" class="menu">Inscription</a>
+        <a href="{{ path('app_login') }}" class="menu">Connexion</a>
     </div>
 
-    <main>
+    <main class="content">
         <div>
             <h1 class="title">Wanted</h1>
         </div>
@@ -20,7 +20,4 @@
         </div>
     </main>
 
-    <footer>
-        
-    </footer>
 {% endblock %}

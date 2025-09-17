@@ -11,4 +11,21 @@ import './styles/app.css';
 import './font/baby-gemoy/Baby_Gemoy.ttf';
 import './font/moldie-demo/Moldie_Demo.otf';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("chaussettes");
+    if (!container) return;
+
+    const imagePath = container.dataset.image;
+    const img = document.createElement("img");
+    img.src = imagePath;
+
+    const size = 50 + Math.random() * 100;
+    img.style.width = `${size}px`;
+    img.style.height = 'auto';
+
+    img.style.position = 'absolute';
+    img.style.left = `${Math.random() * (container.clientWidth - size)}px`;
+    img.style.top = `${Math.random() * (container.clientHeight - size)}px`;
+
+    container.appendChild(img);
+});

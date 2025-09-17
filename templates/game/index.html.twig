@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wanted Game{% endblock %}
+
+{% block body %}
+
+<div id="chaussettes" data-image="{{ asset('img/chaussette.png') }}"
+     >
+</div>
+
+<div>
+    <img src="{{ asset('img/chaussette.png') }}" class="img-nonclick" alt="Image cliquable">
+</div>
+
+<div>
+    <a href="" class="img-link">
+    <img src="{{ asset('img/chaussette.png') }}" class="img-link" alt="Image cliquable">
+    </a>
+</div>
+
+<div>
+    <a href="" class="img-change">
+    <img src="{{ asset('img/chaussette.png') }}" class="img-change" alt="Image cliquable">
+    </a>
+</div>
+
+{% endblock %}
