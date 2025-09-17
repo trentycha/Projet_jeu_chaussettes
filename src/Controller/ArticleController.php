@@ -5,6 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Entity\Article;
+use App\Form\ArticleType;
+use App\Repository\ArticleRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+
 
 final class ArticleController extends AbstractController
 {
@@ -52,8 +58,8 @@ final class ArticleController extends AbstractController
     {
         $article = $articleRepository->find($id);
 
-        entityManager->remove($article);
-        entityManager->flush();
+        $entityManager->remove($article);
+        $entityManager->flush();
 
         $this->addFlash('success', 'Article deleted successfully!');
 
@@ -61,18 +67,24 @@ final class ArticleController extends AbstractController
 }
 
     //MODIFIER UN ARTICLE
-    public function updateArticle($id, Request $request, ArticleRepository $articleRepository, EntityManagerInterface $entitityManager): Response
+    #[Route('/article/update/{id}', name: 'update_article')]
+    public function updateArticle($id, Request $request, ArticleRepository $articleRepository, EntityManagerInterface $entityManager): Response
     {
         $article = $articleRepository->find($id);
+
+        if(!$article){
+            throw $this->createNotFoundException('The article does not exist');
+        }
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            $entityManager->persist($article);
-            $entitityManager->flush();
+            $entityManager->flush();
             $this->addFlash('success', 'Article updated successfully!');
             return $this->redirectToRoute('article');
         }
+
 
         $formView = $form->createView();
         $user = $this->getUser();
