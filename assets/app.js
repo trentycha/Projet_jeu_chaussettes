@@ -11,13 +11,20 @@ import './styles/app.css';
 import './font/baby-gemoy/Baby_Gemoy.ttf';
 import './font/moldie-demo/Moldie_Demo.otf';
 
+// Chargement du jeu
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
     if (!container) return;
 
     const nbrChaussettes = 200;
+    const faussesChaussettes = 5;
     const imagePath = container.dataset.image;
+    const specialPath = container.dataset.special;
+    const hoverPath = container.dataset.hover;
+    const hoverFausse = container.dataset.hoverFausse;
+    const padding = 50;
 
+    //Chaussettes normales, de fond
     for (let i = 0; i < nbrChaussettes; i++) {
         const img = document.createElement("img");
         img.src = imagePath;
@@ -32,6 +39,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const rotation = Math.random() * 360;
         img.style.transform = `rotate(${rotation}deg)`;
+
+        container.appendChild(img);
+    }
+
+    // Chaussette à trouver
+    const specialImg = document.createElement("img");
+    specialImg.src = specialPath;
+    specialImg.classList.add("special"); 
+
+    const sizeSpecial = 50 + Math.random() * 100;
+    specialImg.style.width = `${sizeSpecial}px`;
+    specialImg.style.height = 'auto';
+
+    specialImg.style.position = 'absolute';
+    specialImg.style.left = `${Math.random() * (container.clientWidth - sizeSpecial)}px`;
+    specialImg.style.top = `${Math.random() * (container.clientHeight - sizeSpecial)}px`;
+
+    const rotationSpecial = Math.random() * 360;
+    specialImg.style.transform = `rotate(${rotationSpecial}deg)`;
+
+    //Hover chaussette à trouver
+    specialImg.addEventListener('mouseenter', () => {
+        specialImg.src = hoverPath;
+    });
+
+    specialImg.addEventListener('mouseleave', () => {
+        specialImg.src = specialPath;
+    });
+
+    container.appendChild(specialImg);
+
+
+    // Chaussettes piégées
+    for (let j = 0; j < faussesChaussettes; j++) {
+        const img = document.createElement("img");
+        img.src = imagePath;
+
+        const size = 50 + Math.random() * 100;
+        img.style.width = `${size}px`;
+        img.style.height = 'auto';
+
+        img.style.position = 'absolute';
+        img.style.left = `${Math.random() * (container.clientWidth - size)}px`;
+        img.style.top = `${Math.random() * (container.clientHeight - size)}px`;
+
+        const rotation = Math.random() * 360;
+        img.style.transform = `rotate(${rotation}deg)`;
+
+        //Hover
+        img.addEventListener('mouseenter', () => {
+        img.src = hoverFausse;
+        });
+
+        img.addEventListener('mouseleave', () => {
+        img.src = imagePath;
+        });
 
         container.appendChild(img);
     }
