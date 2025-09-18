@@ -120,8 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!chrono) return;
 
         const startTime = Date.now(); // temps de départ en ms
+        let running = true;
 
         function updateTimer() {
+             if (!running) return;
+
             const elapsed = Date.now() - startTime; // ms écoulées
             const centi = Math.floor((elapsed % 1000) / 10);
             const secondes = Math.floor(elapsed / 1000);
@@ -134,4 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         updateTimer();
+
+    specialImg.addEventListener("click", () => {
+    running = false;      // arrête la boucle updateTimer
+    gagner.style.display = "block";
+    });
 });
