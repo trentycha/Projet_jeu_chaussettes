@@ -11,20 +11,27 @@
 <div class="example-wrapper">
     <h1>Liste des articles</h1>
 
-<a href="{{ path('create_article') }}">Créer un nouvel article</a>
+<a href="{{ path('app_home') }}">Retour à la page d'accueil</a>
+
+<div id="createArticleBtn">
+    <a href="{{ path('create_article') }}">Créer un nouvel article</a>
+</div>
 
 
-<div>
+<div id="articlesContainer">
     {% for article in articles %}
-        <h2>{{ article.title }}</h2>
+
+    <div id="articleBox">
+        <h2 id="articleTitle">{{ article.title }}</h2>
         <p>{{ article.content }}</p>
         <p>Publié par : {{ article.user.email }}</p>
         <a href="{{ path('show_article', {'id': article.id}) }}">Voir l'article</a>
         <a href="{{ path('update_article', {'id': article.id}) }}">Modifier l'article</a>
         <form method="post" action="{{ path('delete_article', {'id': article.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">
             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
-            <button class="btn">Supprimer l'article</button>
+            <button id="deleteArticleBtn">Supprimer l'article</button>
         </form>
+    </div>
     {% else %}
         <p>Aucun article trouvé.</p>
     {% endfor %}

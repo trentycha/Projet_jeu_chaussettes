@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
     if (!container) return;
 
+    const gameOver = document.getElementById("gameover");
+
     const nbrChaussettes = 200;
     const faussesChaussettes = 5;
     const imagePath = container.dataset.image;
@@ -92,10 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = hoverFausse;
         });
 
+        img.addEventListener('click', () => {
+            gameOver.style.display = 'block';
+        });
+
         img.addEventListener('mouseleave', () => {
         img.src = imagePath;
         });
 
         container.appendChild(img);
     }
+
+        
+    
+
+
 });

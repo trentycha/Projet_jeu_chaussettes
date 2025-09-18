@@ -4,8 +4,12 @@
 
 {% block body %}
     <div class="top-nav">
+    {% if app.user %}
+        <a href="{{ path('app_logout') }}" class="menu">Déconnexion</a>
+    {% else %}
         <a href="{{ path('app_register') }}" class="menu">Inscription</a>
         <a href="{{ path('app_login') }}" class="menu">Connexion</a>
+    {% endif %}
     </div>
 
     <main class="content">

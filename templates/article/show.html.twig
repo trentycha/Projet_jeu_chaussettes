@@ -6,10 +6,13 @@
 
 <a href="{{ path('article') }}">Retour à la liste des articles</a>
 
-<div class="example-wrapper">
+<div id="showArticleContainer">
+<div id="showArticleBox">
     <h1>{{ article.title }}</h1>
 
     <p>{{ article.content }}</p>
     <p>Publié par : {{ article.user.email }}</p>
+
+</div>
 </div>
 {% endblock %}

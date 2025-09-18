@@ -18,7 +18,7 @@ final class ScoreController extends AbstractController
     #[Route('/score', name: 'score')]
     public function listScores(ScoreRepository $scoreRepository): Response
     {
-        $scores = $scoreRepository->findAll();
+        $scores = $scoreRepository->findBy([], ['time' => 'ASC']);
 
         return $this->render('score/index.html.twig', [
             'scores' => $scores,

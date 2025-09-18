@@ -4,14 +4,17 @@
 
 {% block body %}
 
+<a href="{{ path('article') }}">Retour à la liste d'articles</a>
 
-<div class="example-wrapper">
     <h1>Créer un article</h1>
+
+
+<div id="createArticleContainer">
 
     {{ form_start(form) }}
         {{ form_row(form.title) }}
         {{ form_row(form.content) }}
-        <button class="btn">Créer</button>
+        <button id="publishButton">Publier</button>
     {{ form_end(form) }}
 
 

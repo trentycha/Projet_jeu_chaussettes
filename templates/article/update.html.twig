@@ -4,8 +4,9 @@
 
 {% block body %}
 
+<a href="{{ path('article') }}">Retour à la liste d'articles</a>
 
-<div class="example-wrapper">
+<div id="createArticleContainer">
     <h1>Modifier un article</h1>
 
     {{ form_start(form) }}
