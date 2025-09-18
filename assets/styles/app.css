@@ -112,35 +112,14 @@ main {
     color: #91e1fe;
 }
 
-.img-nonclick {
-    display: block;
-    width: 150px;
-    height: 150px;
-}
-
-.img-link, .img-change {
-  display: block;
-  width: 150px;
-  height: 150px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: background-image 0.3s ease;
-}
-
-.img-link:hover {
-  content: url('../img/chaussette-paire-1.png');
-}
-
-.img-change:hover {
-  content: url('../img/chaussette-paire-2.png');
-}
-
 #chaussettes {
-  position: relative;
+  position: absolute;
   width: 70vw;
   height: 70vh;
   background-color: white;
   overflow: hidden;
+  border-radius: 20px;
+  padding: 50px;
 }
 
 #chaussettes img {
