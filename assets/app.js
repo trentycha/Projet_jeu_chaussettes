@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
     if (!container) return;
 
-    const nbrChaussettes = 100;
+    const nbrChaussettes = 200;
     const imagePath = container.dataset.image;
 
     for (let i = 0; i < nbrChaussettes; i++) {
@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
         img.style.position = 'absolute';
         img.style.left = `${Math.random() * (container.clientWidth - size)}px`;
         img.style.top = `${Math.random() * (container.clientHeight - size)}px`;
+
+        const rotation = Math.random() * 360;
+        img.style.transform = `rotate(${rotation}deg)`;
 
         container.appendChild(img);
     }
