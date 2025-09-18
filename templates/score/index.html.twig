@@ -9,8 +9,16 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Liste des scores ! </h1>
+    <h1>Liste des scores</h1>
 
-    Liste des scores
+    <a href="{{ path('add_score') }}" class="btn">Ajouter un score</a>
+
+    <ul>
+        {% for score in scores %}
+            <li>{{ score.name }} - {{ score.time }} secondes</li>
+        {% else %}
+            <li>Aucun score trouvé.</li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}
