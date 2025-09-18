@@ -58,6 +58,7 @@ final class ArticleController extends AbstractController
 
     //SUPPRIMER UN ARTICLE
     #[Route('/article/delete/{id}', name: 'delete_article')]
+    #[IsGranted('ROLE_USER')]
     public function deleteArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager): Response
     {
         $article = $articleRepository->find($id);
@@ -72,6 +73,7 @@ final class ArticleController extends AbstractController
 
     //MODIFIER UN ARTICLE
     #[Route('/article/update/{id}', name: 'update_article')]
+    #[IsGranted('ROLE_USER')]
     public function updateArticle($id, Request $request, ArticleRepository $articleRepository, EntityManagerInterface $entityManager): Response
     {
         $article = $articleRepository->find($id);

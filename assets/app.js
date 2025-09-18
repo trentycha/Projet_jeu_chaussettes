@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
     if (!container) return;
 
-    const nbrChaussettes = 100;
+    const nbrChaussettes = 200;
     const imagePath = container.dataset.image;
 
     for (let i = 0; i < nbrChaussettes; i++) {
