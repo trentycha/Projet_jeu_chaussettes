@@ -14,10 +14,14 @@ import './font/moldie-demo/Moldie_Demo.otf';
 // Chargement du jeu
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
+<<<<<<< HEAD
     if (!container) return;
 
     const gameOver = document.getElementById("gameover");
 
+=======
+    
+>>>>>>> e96e848c8ffebafe39ca2277591bd7d507e200c3
     const nbrChaussettes = 200;
     const faussesChaussettes = 5;
     const imagePath = container.dataset.image;
@@ -50,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     specialImg.src = specialPath;
     specialImg.classList.add("special"); 
 
+    const gagner = document.getElementById("endgame");
+
     const sizeSpecial = 50 + Math.random() * 100;
     specialImg.style.width = `${sizeSpecial}px`;
     specialImg.style.height = 'auto';
@@ -64,6 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //Hover chaussette à trouver
     specialImg.addEventListener('mouseenter', () => {
         specialImg.src = hoverPath;
+        specialImg.style.cursor = 'pointer';
+    });
+
+    specialImg.addEventListener('click', () => {
+        gagner.style.display = "block";
     });
 
     specialImg.addEventListener('mouseleave', () => {
@@ -92,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //Hover
         img.addEventListener('mouseenter', () => {
         img.src = hoverFausse;
+        img.style.cursor = 'pointer';
         });
 
         img.addEventListener('click', () => {
@@ -104,9 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         container.appendChild(img);
     }
+<<<<<<< HEAD
 
         
     
 
 
+=======
+    
+>>>>>>> e96e848c8ffebafe39ca2277591bd7d507e200c3
 });
+
