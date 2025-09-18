@@ -284,7 +284,7 @@ a{
 
 #articleBox p{
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limite à 4 lignes */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
