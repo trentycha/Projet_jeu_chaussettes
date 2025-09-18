@@ -75,6 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     specialImg.addEventListener("click", () => {
         gagner.style.display = "block";
+
+            // Récupérer le temps du chrono
+    const chronoText = document.getElementById("chrono").textContent; // ex: "12.34"
+
+    // Remplir le champ 'time' du formulaire Symfony
+    const timeField = document.getElementById("score_time"); 
+    if (timeField) {
+        timeField.value = parseFloat(chronoText);
+    }
+
+    // Afficher le temps dans l'écran de fin
+    const timeElapsed = document.getElementById("time-elapsed");
+    if (timeElapsed) {
+        timeElapsed.textContent = `Votre temps : ${chronoText} secondes`;
+    }
     });
 
     specialImg.addEventListener("mouseleave", () => {

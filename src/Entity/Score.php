@@ -16,7 +16,7 @@ class Score
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'float')]
     private ?int $time = null;
 
     public function getId(): ?int
