@@ -136,7 +136,7 @@ main {
   position: relative;
   width: 800px;
   height: 600px;
-  border: 1px solid #ccc; /* juste pour visualiser le conteneur */
+  border: 1px solid #ccc;
   overflow: hidden;
 }
 

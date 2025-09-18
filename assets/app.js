@@ -15,17 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
     if (!container) return;
 
+    const nbrChaussettes = 100;
     const imagePath = container.dataset.image;
-    const img = document.createElement("img");
-    img.src = imagePath;
 
-    const size = 50 + Math.random() * 100;
-    img.style.width = `${size}px`;
-    img.style.height = 'auto';
+    for (let i = 0; i < nbrChaussettes; i++) {
+        const img = document.createElement("img");
+        img.src = imagePath;
 
-    img.style.position = 'absolute';
-    img.style.left = `${Math.random() * (container.clientWidth - size)}px`;
-    img.style.top = `${Math.random() * (container.clientHeight - size)}px`;
+        const size = 50 + Math.random() * 100;
+        img.style.width = `${size}px`;
+        img.style.height = 'auto';
 
-    container.appendChild(img);
+        img.style.position = 'absolute';
+        img.style.left = `${Math.random() * (container.clientWidth - size)}px`;
+        img.style.top = `${Math.random() * (container.clientHeight - size)}px`;
+
+        container.appendChild(img);
+    }
 });
