@@ -24,5 +24,40 @@
     </a>
 </div>
 
+{# ECRAN DE FIN DE JEU #}
+
+<div id="endgame">
+<h2>Bravo !</h2>
+<p>Vous avez trouvé la chaussette !</p>
+
+<p>Temps écoulé : <span id="time-elapsed"></span> secondes</p>
+
+<p>Entrez votre nom pour enregistrer votre score :</p>
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.time) }}
+        <button class="btn">Ajouter</button>
+    {{ form_end(form) }}
+
+<h3>Voici les meilleurs temps : </h3>
+<ul id="best-times">
+    <!-- Les meilleurs temps seront insérés ici dynamiquement -->
+    {% for score in bestScores %}
+        <li>{{ score.name }} - {{ score.time }} secondes</li>
+    {% else %}
+        <li>Aucun score trouvé.</li>
+    {% endfor %}
+</ul>
+
+<button id="restart-button">Recommencer</button>
+</div>
+
+{# ECRAN GAMEOVER #}
+<div id="gameover">
+    <h2>Game Over</h2>
+    <p>Vous avez perdu !</p>
+    <button id="restart-button">Recommencer</button>
+</div>
+
 {% endblock %}
 

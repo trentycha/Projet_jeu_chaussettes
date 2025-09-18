@@ -146,3 +146,88 @@ main {
   z-index: 1;
   transition: transform 0.3s;
 }
+
+/* ECRAN DE FIN DE JEU */
+
+#endgame {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center;  */
+    padding: 0;
+    z-index: 2000; /* Au-dessus de tout le reste */
+}
+
+#endgame h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: "Baby Gemoy", serif;
+}
+
+#endgame p {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: "Moldie", serif;
+}
+
+#endgame ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#player-name {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-align: center;
+    font-family: "Moldie", serif;
+}
+
+#submit-score {
+    font-size: 25px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-decoration: none;
+    font-family: "Moldie", serif;
+    background: #ffffff;
+    color: #91e1fe;
+}
+
+#best-times{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+/* ECRAN GAMEOVER */
+
+#gameover {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 0;
+    z-index: 2000; /* Au-dessus de tout le reste */
+}
