@@ -3,6 +3,9 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+  align-items: center;
 }
 
 /* Fond de la page */
@@ -134,9 +137,9 @@ main {
 
 #chaussettes {
   position: relative;
-  width: 800px;
-  height: 600px;
-  border: 1px solid #ccc;
+  width: 70vw;
+  height: 70vh;
+  background-color: white;
   overflow: hidden;
 }
 

@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nbrChaussettes = 200;
     const imagePath = container.dataset.image;
+    const specialPath = container.dataset.special;
 
     for (let i = 0; i < nbrChaussettes; i++) {
         const img = document.createElement("img");
@@ -35,4 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         container.appendChild(img);
     }
+
+    const specialImg = document.createElement("img");
+    specialImg.src = specialPath;
+
+    const sizeSpecial = 50 + Math.random() * 100;
+    specialImg.style.width = `${sizeSpecial}px`;
+    specialImg.style.height = 'auto';
+
+    specialImg.style.position = 'absolute';
+    specialImg.style.left = `${Math.random() * (container.clientWidth - sizeSpecial)}px`;
+    specialImg.style.top = `${Math.random() * (container.clientHeight - sizeSpecial)}px`;
+
+    const rotationSpecial = Math.random() * 360;
+    specialImg.style.transform = `rotate(${rotationSpecial}deg)`;
+
+    container.appendChild(specialImg);
 });
