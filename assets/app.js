@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         img.style.left = `${Math.random() * (container.clientWidth - size)}px`;
         img.style.top = `${Math.random() * (container.clientHeight - size)}px`;
 
+        const rotation = Math.random() * 360;
+        img.style.transform = `rotate(${rotation}deg)`;
+
         container.appendChild(img);
     }
 });

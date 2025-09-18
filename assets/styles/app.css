@@ -142,5 +142,7 @@ main {
 
 #chaussettes img {
   position: absolute;
+  display: block;
+  z-index: 1;
   transition: transform 0.3s;
 }
