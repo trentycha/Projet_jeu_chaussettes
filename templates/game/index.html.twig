@@ -29,13 +29,14 @@
 <h2>Bravo !</h2>
 <p>Vous avez trouvé la chaussette !</p>
 
-<p>Temps écoulé : <span id="time-elapsed"></span> secondes</p>
+
 
 <p>Entrez votre nom pour enregistrer votre score :</p>
     {{ form_start(form) }}
         {{ form_row(form.name) }}
+        {{ form_row(form.time) }}
         <button class="btn">Ajouter</button>
-    {{ form_end(form, {'render_rest': false}) }}
+    {{ form_end(form) }}
 
 <h3>Voici les meilleurs temps : </h3>
 <ul id="best-times">
@@ -54,7 +55,7 @@
 <div id="gameover">
     <h2>Game Over</h2>
     <p>Vous avez perdu !</p>
-    <a href="http://projet_jeu_chaussettes.test/game">Recommencer</>
+    <button class="btn" ><a href="{{ path('game') }}" ="btnJeu">Recommencer</a></button>
 </div>
 
 {% endblock %}
