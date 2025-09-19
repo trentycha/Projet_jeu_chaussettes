@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 class ScoreType extends AbstractType
 {
@@ -14,7 +15,7 @@ class ScoreType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('time');
+            ->add('time', HiddenType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

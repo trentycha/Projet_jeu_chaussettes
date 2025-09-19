@@ -34,8 +34,9 @@
 <p>Entrez votre nom pour enregistrer votre score :</p>
     {{ form_start(form) }}
         {{ form_row(form.name) }}
+        {{ form_row(form.time) }}
         <button class="btn">Ajouter</button>
-    {{ form_end(form, {'render_rest': false}) }}
+    {{ form_end(form) }}
 
 <h3>Voici les meilleurs temps : </h3>
 <ul id="best-times">
