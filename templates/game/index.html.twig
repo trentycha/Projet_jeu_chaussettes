@@ -20,7 +20,7 @@
 </div>
 
 <div>
-    <button class="btn" ><a href="{{ path('app_home') }}" ="btnJeu">Accueil</a></button>
+    <a href="{{ path('app_home') }}" ="btnJeu" class="btn">Accueil</a>
 </div>
 
 {# ECRAN DE FIN DE JEU #}
@@ -35,7 +35,7 @@
     {{ form_start(form) }}
         {{ form_row(form.name) }}
        
-        <button class="btn" ><a href="{{ path('score') }}" ="btnJeu">Ajouter</a></button>
+        <a href="{{ path('score') }}" class="btn">Ajouter</a>
     {{ form_end(form, {'render_rest' : false}) }}
 
 <h3>Voici les meilleurs temps : </h3>
@@ -48,7 +48,7 @@
     {% endfor %}
 </ul>
 
-<button class="btn" ><a href="{{ path('game') }}" ="btnJeu">Recommencer</a></button>
+<a href="{{ path('game') }}" ="btnJeu" class="btn">Recommencer</a>
 </div>
 
 {# ECRAN GAMEOVER #}
