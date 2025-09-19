@@ -422,3 +422,17 @@ a{
     line-height: 1.6;
     margin-bottom: 20px;
 }
+
+.settingsArticle {
+    padding: 5px 15px;
+    margin: 0 10px;
+    font-size: 15px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-decoration: none;
+    font-family: "Moldie", serif;
+    background: #ffffff;
+    color: #91e1fe;
+}
