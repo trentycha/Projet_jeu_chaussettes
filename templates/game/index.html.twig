@@ -29,13 +29,14 @@
 <h2>Bravo !</h2>
 <p>Vous avez trouvé la chaussette !</p>
 
+<p><span id="time-elapsed"></span></p>
 
 <p>Entrez votre nom pour enregistrer votre score :</p>
     {{ form_start(form) }}
         {{ form_row(form.name) }}
-        {{ form_row(form.time) }}
-        <button class="btn">Ajouter</button>
-    {{ form_end(form) }}
+       
+        <button class="btn" ><a href="{{ path('score') }}" ="btnJeu">Ajouter</a></button>
+    {{ form_end(form, {'render_rest' : false}) }}
 
 <h3>Voici les meilleurs temps : </h3>
 <ul id="best-times">

@@ -160,3 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+let recupBtnAjouter = document.getElementById("ajouterScore");
+recupBtnAjouter.addEventListener("submit", () => {
+    event.preventDefault();
+    const url = recupBtnAjouter.dataset.url;
+    window.location.href = url;
+})
