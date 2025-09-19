@@ -312,6 +312,29 @@ a{
     right: 20px;
 }
 
+#articleSettingsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.settingsArticle {
+    font-size: 15px;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-decoration: none;
+    background: #ffffff;
+    color: #f57c45;
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* CREATION D'ARTICLE */
 
 #createArticleContainer {
@@ -406,3 +429,121 @@ a{
     line-height: 1.6;
     margin-bottom: 20px;
 }
+
+/* PAGE DE LOGIN */
+
+#loginContainer {
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#loginContainer h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#loginContainer label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#loginContainer input {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    margin-bottom: 20px;
+}
+
+#loginContainer button {
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-decoration: none;
+    font-family: "Moldie", serif;
+    background: #ffffff;
+    color: #f57c45;
+    text-align: center;
+}
+
+/* PAGE D'INSCRIPTION */
+
+#registerContainer {
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#registerContainer h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#registerContainer label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#registerContainer input {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    margin-bottom: 20px;
+}
+
+#registerContainer button {
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-decoration: none;
+    font-family: "Moldie", serif;
+    background: #ffffff;
+    color: #f57c45;
+    text-align: center;
+}
+
+/* RETOUR EN ARRIERE */
+
+.backToHome {
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(109, 109, 109, 0.679);
+    text-decoration: none;
+    font-family: "Moldie", serif;
+    background: #ffffff;
+    color: #91e1fe;
+    z-index: 1000;
+}
+

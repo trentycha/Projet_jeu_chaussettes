@@ -17,7 +17,7 @@ class Score
     private ?string $name = null;
 
     #[ORM\Column(type: 'float')]
-    private ?int $time = null;
+    private ?float $time = null;
 
     public function getId(): ?int
     {
@@ -36,12 +36,12 @@ class Score
         return $this;
     }
 
-    public function getTime(): ?int
+    public function getTime(): ?float
     {
         return $this->time;
     }
 
-    public function setTime(int $time): static
+    public function setTime(float $time): static
     {
         $this->time = $time;
 

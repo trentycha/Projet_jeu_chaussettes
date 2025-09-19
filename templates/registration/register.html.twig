@@ -7,6 +7,9 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
+<a href="{{ path('app_home') }}" class="backToHome">Retour à la page d'accueil</a>
+
+<div id="registerContainer">
     <h1>Register</h1>
 
     {{ form_errors(registrationForm) }}
@@ -20,4 +23,5 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+</div>
 {% endblock %}

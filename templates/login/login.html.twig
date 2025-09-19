@@ -3,6 +3,11 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+
+<a href="{{ path('app_home') }}" class="backToHome">Retour à la page d'accueil</a>
+
+<div id="loginContainer">
+
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -22,8 +27,8 @@
         <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
 
             <div class="checkbox mb-3">
-                <input type="checkbox" name="_remember_me" id="_remember_me">
                 <label for="_remember_me">Remember me</label>
+                <input type="checkbox" name="_remember_me" id="_remember_me">
             </div>
         
 
@@ -31,4 +36,6 @@
             Sign in
         </button>
     </form>
+
+</div>
 {% endblock %}
