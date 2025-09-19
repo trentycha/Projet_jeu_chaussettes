@@ -27,7 +27,6 @@
 
 <div id="endgame">
 <h2>Bravo !</h2>
-<p>Vous avez trouvé la chaussette !</p>
 
 <p><span id="time-elapsed"></span></p>
 
@@ -37,8 +36,6 @@
         {{ form_row(form.time) }}
         <button class="btn">Ajouter</button>
     {{ form_end(form) }}
-
-<p>ceci est un test</p>
 
 <h3>Voici les meilleurs temps : </h3>
 <ul id="best-times">
@@ -55,8 +52,7 @@
 
 {# ECRAN GAMEOVER #}
 <div id="gameover">
-    <h2>Game Over</h2>
-    <p>Vous avez perdu !</p>
+    <h2>You sock !</h2>
     <button class="btn" ><a href="{{ path('game') }}" ="btnJeu">Recommencer</a></button>
 </div>
 

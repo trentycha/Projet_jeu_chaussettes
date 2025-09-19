@@ -267,12 +267,40 @@ a{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+
+    background: rgba(255, 232, 232, 0); 
+    backdrop-filter: blur(8px);
+
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+    font-family: "Moldie", serif; 
+    z-index: 2000;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 0;
-    z-index: 2000; /* Au-dessus de tout le reste */
 }
+
+#gameover h2, 
+#gameover button {
+    display: block;
+    margin: 20px auto; /* centre horizontalement */
+}
+#gameover h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#gameover button {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 /* BLOG */
 
