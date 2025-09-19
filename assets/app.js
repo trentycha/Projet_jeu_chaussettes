@@ -11,6 +11,17 @@ import "./styles/app.css";
 import "./font/baby-gemoy/Baby_Gemoy.ttf";
 import "./font/moldie-demo/Moldie_Demo.otf";
 
+// Musique
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("maMusique");
+    
+    document.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play().catch(e => console.log("Autoplay bloqué :", e));
+        }
+    }, { once: true });
+});
+
 // Chargement du jeu
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chaussettes");
@@ -160,9 +171,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-let recupBtnAjouter = document.getElementById("ajouterScore");
-recupBtnAjouter.addEventListener("submit", () => {
-    event.preventDefault();
-    const url = recupBtnAjouter.dataset.url;
-    window.location.href = url;
-})

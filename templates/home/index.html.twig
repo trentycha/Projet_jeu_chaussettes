@@ -3,6 +3,7 @@
 {% block title %}Wanted{% endblock %}
 
 {% block body %}
+    <audio id="maMusique" src="{{ asset('music/page_home.mp3') }}" loop></audio>
     <div class="top-nav">
     {% if app.user %}
         <a href="{{ path('app_logout') }}" class="menu">Déconnexion</a>
