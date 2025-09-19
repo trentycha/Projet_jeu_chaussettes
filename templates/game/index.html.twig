@@ -19,6 +19,10 @@
      data-hover-fausse="{{ asset('img/chaussette-paire-1.png') }}">
 </div>
 
+<div>
+    <button class="btn" ><a href="{{ path('app_home') }}" ="btnJeu">Accueil</a></button>
+</div>
+
 {# ECRAN DE FIN DE JEU #}
 
 <div id="endgame">
@@ -43,14 +47,14 @@
     {% endfor %}
 </ul>
 
-<button id="restart-button">Recommencer</button>
+<button class="btn" ><a href="{{ path('game') }}" ="btnJeu">Recommencer</a></button>
 </div>
 
 {# ECRAN GAMEOVER #}
 <div id="gameover">
     <h2>Game Over</h2>
     <p>Vous avez perdu !</p>
-    <button id="restart-button">Recommencer</button>
+    <a href="http://projet_jeu_chaussettes.test/game">Recommencer</>
 </div>
 
 {% endblock %}

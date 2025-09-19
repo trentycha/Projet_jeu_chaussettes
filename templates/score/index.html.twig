@@ -16,7 +16,7 @@
     <div id="scoreList">
         <ul>
             {% for score in scores %}
-                <li>{{ score.name }} - {{ score.time }} secondes</li>
+                <li>{{ score.name }} - {{ score.time|number_format(2, ',', ' ') }} secondes</li>
             {% else %}
                 <li>Aucun score trouvé.</li>
             {% endfor %}
